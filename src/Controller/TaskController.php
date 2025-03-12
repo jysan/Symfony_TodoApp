@@ -25,7 +25,7 @@ final class TaskController extends AbstractController{
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $task = new Task();
-        $setCreatedAt(new \DateTimeImmutable());
+        $task->setCreatedAt(new \DateTimeImmutable());
         $form = $this->createForm(TaskType::class, $task);
         $form->handleRequest($request);
 
